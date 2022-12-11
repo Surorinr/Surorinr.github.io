@@ -1,0 +1,106 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  height: 100%;
+  font-family: sans-serif;
+  background: url(https://s2.loli.net/2022/12/11/nMkX4pS3tvlKmw2.png);
+
+}
+
+.container {
+    align-items: flex-start;
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+    padding: 64px 24px;
+
+}
+
+.card-grid {
+    display: grid;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.background {
+position: absolute;
+top: 0%;
+left: 0%;
+right: 0%;
+bottom: 0%;
+background-position: center;
+background-size: cover;
+border-radius: 24px;
+filter: brightness(0.75) saturate(1.2) contrast(0.85);
+
+transform: 
+filter 200ms linear,
+transform 200ms linear;
+
+}
+
+.card {
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+}
+
+.content {
+    padding: 24px;
+    position: absolute;
+    top: 0%;
+}
+
+.category {
+    color: #dff3de;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+
+}
+
+
+.heading {
+    color: #dff3de;
+    font-size: 1.8rem;
+}
+
+.card:hover.background {
+    transform: scale(1.05);
+    filter: none;
+}
+
+@media (min-width:540px) {
+    .card-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media (min-width:960px) {
+    .card-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+}
+.card-grid:hover > .card:not(:hover) .background {
+    filter: brightness(0.6) saturate(1) 
+    contrast(1.2) blur(5px);
+}
+
+.card-grid:hover > .card:not(:hover) .content {
+    filter: brightness(0.8) blur(2px);
+}
